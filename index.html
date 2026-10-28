@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#080808">
+<title>Khaiwal | Join Telegram</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #080808;
+  color: #f5f5f5;
+  font-family: Arial, sans-serif;
+  min-height: 100vh;
+  padding: 22px 12px;
+}
+
+.container {
+  width: 100%;
+  max-width: 390px;
+  margin: auto;
+  text-align: center;
+  border: 1px solid #9e772b;
+  border-radius: 16px;
+  padding: 24px 18px;
+  background: linear-gradient(160deg, #17130b, #090909 60%);
+  box-shadow: 0 0 22px #c69b3520;
+}
+
+.logo-box {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto 15px;
+  border: 2px solid #d5ac50;
+  border-radius: 50%;
+  overflow: hidden;
+  background: #211a0d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.logo-text {
+  color: #f1cc72;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+h1 {
+  color: #edc76b;
+  font-size: 25px;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  color: #c9c1ad;
+  font-size: 12px;
+  line-height: 1.7;
+  margin-bottom: 19px;
+}
+
+.line {
+  width: 65px;
+  height: 2px;
+  background: #d7ae50;
+  margin: 0 auto 18px;
+}
+
+.info {
+  border: 1px solid #5e4921;
+  border-radius: 10px;
+  padding: 14px 10px;
+  margin-bottom: 18px;
+  background: #ffffff05;
+}
+
+.info h2 {
+  color: #eac66f;
+  font-size: 15px;
+  margin-bottom: 7px;
+}
+
+.info p {
+  color: #c9c9c9;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.join-btn {
+  display: block;
+  width: 100%;
+  text-decoration: none;
+  color: #171107;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 14px 10px;
+  border-radius: 9px;
+  background: linear-gradient(100deg, #b88627, #ffe69a, #c39536);
+  background-size: 200% auto;
+  animation: shine 3s linear infinite;
+  box-shadow: 0 0 15px #d9ae4840;
+}
+
+@keyframes shine {
+  to { background-position: 200% center; }
+}
+
+.upload {
+  display: inline-block;
+  margin-top: 13px;
+  font-size: 11px;
+  color: #d7bd7c;
+  cursor: pointer;
+}
+
+.upload input {
+  display: none;
+}
+
+.note {
+  color: #898989;
+  font-size: 10px;
+  line-height: 1.6;
+  margin-top: 16px;
+}
+
+.footer {
+  margin-top: 23px;
+  padding-top: 15px;
+  border-top: 1px solid #493a20;
+  font-size: 11px;
+  color: #b8b8b8;
+}
+
+.footer a {
+  color: #edc76b;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+@media (max-width: 360px) {
+  .container { padding: 20px 14px; }
+  h1 { font-size: 22px; }
+}
+</style>
+</head>
+
+<body>
+
+<main class="container">
+
+  <div class="logo-box">
+    <img id="logo" alt="Khaiwal Logo"
+      src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23211a0d'/%3E%3Ctext x='50' y='59' font-size='22' font-weight='bold' text-anchor='middle' fill='%23edc76b'%3EKW%3C/text%3E%3C/svg%3E">
+  </div>
+
+  <h1>KHAIWAL</h1>
+  <div class="line"></div>
+
+  <p class="subtitle">
+    Welcome to Our Official Telegram Channel
+  </p>
+
+  <section class="info">
+    <h2>JOIN OUR TELEGRAM</h2>
+    <p>
+      Join our Telegram channel for updates and
+      information. Stay connected with our community.
+    </p>
+  </section>
+
+  <!-- Replace YOUR_TELEGRAM_LINK with your channel URL -->
+  <a class="join-btn"
+     id="joinBtn"
+     href="https://t.me/"
+     target="_blank"
+     rel="noopener noreferrer">
+    ✦ JOIN TELEGRAM CHANNEL ✦
+  </a>
+
+  <label class="upload">
+    📷 Change Logo / Photo
+    <input type="file" id="photoInput" accept="image/*">
+  </label>
+
+  <p class="note">
+    Please use this page responsibly. No result or
+    earning is guaranteed.
+  </p>
+
+  <footer class="footer">
+    Ad Managed By
+    <a href="https://t.me/" target="_blank"
+       rel="noopener noreferrer">
+      Adsbig Agency
+    </a>
+  </footer>
+
+</main>
+
+<script>
+const photoInput = document.getElementById("photoInput");
+const logo = document.getElementById("logo");
+
+photoInput.addEventListener("change", function () {
+  const file = this.files[0];
+
+  if (file && file.type.startsWith("image/")) {
+    const reader = new FileReader();
+
+    reader.onload = function (event) {
+      logo.src = event.target.result;
+    };
+
+    reader.readAsDataURL(file);
+  }
+});
+
+// Add your actual Telegram channel link here:
+const telegramLink = "";
+
+if (telegramLink.startsWith("https://t.me/")) {
+  document.getElementById("joinBtn").href = telegramLink;
+}
+</script>
+
+</body>
+</html>
